@@ -1,22 +1,25 @@
 ---
 // About Section Component
+interface Props {
+  title: string;
+  content: string;
+}
+
+const { title, content } = Astro.props;
+
+// Split content into paragraphs
+const paragraphs = content.split('\n\n').filter(p => p.trim());
 ---
 
 <section id="about" class="py-24 px-6 bg-soft-white">
   <div class="max-w-4xl mx-auto">
     <h2 class="font-serif text-4xl md:text-5xl mb-8 text-charcoal text-center">
-      About Middle Coast
+      {title}
     </h2>
     <div class="space-y-6 text-lg leading-relaxed">
-      <p>
-        Middle Coast is a Midwest-focused real estate investment firm dedicated to identifying and capitalizing on opportunities in the region's most dynamic markets.
-      </p>
-      <p>
-        We believe the Midwest represents one of the most compelling investment landscapes in the United States. Our approach combines deep local market knowledge with institutional-quality investment discipline to generate consistent, risk-adjusted returns for our investors.
-      </p>
-      <p>
-        Our team brings decades of combined experience in real estate acquisition, development, and asset management. We specialize in identifying undervalued properties with strong fundamentals and executing value-add strategies that unlock their full potential.
-      </p>
+      {paragraphs.map((paragraph) => (
+        <p>{paragraph}</p>
+      ))}
     </div>
   </div>
 </section>

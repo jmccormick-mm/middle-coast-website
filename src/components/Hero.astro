@@ -1,17 +1,26 @@
 ---
 // Hero Section Component
+interface Props {
+  name: string;
+  tagline: string;
+  description: string;
+  calendlyUrl?: string;
+  theme?: string;
+}
+
+const { name, tagline, description, calendlyUrl } = Astro.props;
 ---
 
 <section class="min-h-screen flex items-center justify-center bg-charcoal text-soft-white px-6 py-20">
   <div class="max-w-5xl mx-auto text-center">
     <h1 class="font-serif text-5xl md:text-7xl mb-6 leading-tight">
-      Middle Coast
+      {name}
     </h1>
     <p class="text-xl md:text-2xl mb-4 font-light max-w-3xl mx-auto">
-      Midwest Real Estate Investment Firm
+      {tagline}
     </p>
     <p class="text-lg md:text-xl mb-12 font-light max-w-2xl mx-auto opacity-90">
-      Building lasting value through strategic real estate investments in the heart of America
+      {description}
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
       <a
@@ -20,14 +29,16 @@
       >
         Get in Touch
       </a>
-      <a
-        href="https://calendly.com/middlecoast"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="border-2 border-soft-white hover:bg-soft-white hover:text-charcoal text-soft-white px-8 py-4 rounded-sm transition-all font-medium text-lg"
-      >
-        Schedule a Call
-      </a>
+      {calendlyUrl && (
+        <a
+          href={calendlyUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="border-2 border-soft-white hover:bg-soft-white hover:text-charcoal text-soft-white px-8 py-4 rounded-sm transition-all font-medium text-lg"
+        >
+          Schedule a Call
+        </a>
+      )}
     </div>
   </div>
 </section>

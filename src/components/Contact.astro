@@ -1,5 +1,10 @@
 ---
 // Contact Section Component
+interface Props {
+  calendlyUrl?: string;
+}
+
+const { calendlyUrl } = Astro.props;
 ---
 
 <section id="contact" class="py-24 px-6 bg-soft-white">
@@ -75,18 +80,20 @@
       </div>
     </form>
     
-    <div class="mt-12 text-center">
-      <p class="text-sm opacity-75">
-        Or schedule a call directly with our team
-      </p>
-      <a
-        href="https://calendly.com/middlecoast"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-block mt-4 text-copper hover:underline font-medium"
-      >
-        View Available Times →
-      </a>
-    </div>
+    {calendlyUrl && (
+      <div class="mt-12 text-center">
+        <p class="text-sm opacity-75">
+          Or schedule a call directly with our team
+        </p>
+        <a
+          href={calendlyUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block mt-4 text-copper hover:underline font-medium"
+        >
+          View Available Times →
+        </a>
+      </div>
+    )}
   </div>
 </section>
