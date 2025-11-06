@@ -1,0 +1,34 @@
+---
+// Investment Approach Section - 4 Pillars
+interface Pillar {
+  title: string;
+  description: string;
+}
+
+interface Props {
+  title: string;
+  pillars: Pillar[];
+}
+
+const { title, pillars } = Astro.props;
+---
+
+<section id="approach" class="py-24 px-6 bg-charcoal text-soft-white">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="font-serif text-4xl md:text-5xl mb-16 text-center">
+      {title}
+    </h2>
+    <div class="grid md:grid-cols-2 gap-12">
+      {pillars.map((pillar) => (
+        <div class="space-y-4">
+          <h3 class="font-serif text-2xl md:text-3xl text-copper">
+            {pillar.title}
+          </h3>
+          <p class="text-lg leading-relaxed opacity-90">
+            {pillar.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

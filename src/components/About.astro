@@ -1,0 +1,25 @@
+---
+// About Section Component
+interface Props {
+  title: string;
+  content: string;
+}
+
+const { title, content } = Astro.props;
+
+// Split content into paragraphs
+const paragraphs = content.split('\n\n').filter(p => p.trim());
+---
+
+<section id="about" class="py-24 px-6 bg-soft-white">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="font-serif text-4xl md:text-5xl mb-8 text-charcoal text-center">
+      {title}
+    </h2>
+    <div class="space-y-6 text-lg leading-relaxed">
+      {paragraphs.map((paragraph) => (
+        <p>{paragraph}</p>
+      ))}
+    </div>
+  </div>
+</section>
