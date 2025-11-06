@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import InvestmentApproach from '../components/InvestmentApproach.astro';
+import Contact from '../components/Contact.astro';
+---
+
+<Layout title="Middle Coast - Midwest Real Estate Investment Firm">
+  <Hero />
+  <About />
+  <InvestmentApproach />
+  <Contact />
+  
+  <footer class="bg-charcoal text-soft-white py-8 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <p class="opacity-75">
+        &copy; {new Date().getFullYear()} Middle Coast. All rights reserved.
+      </p>
+    </div>
+  </footer>
+</Layout>
