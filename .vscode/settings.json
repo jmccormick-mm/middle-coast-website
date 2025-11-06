@@ -7,16 +7,16 @@
 		"editor.defaultFormatter": "astro-build.astro-vscode"
 	},
 	"[typescript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "biomejs.biome"
 	},
 	"[javascript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "biomejs.biome"
 	},
 	"[json]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[jsonc]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "vscode.json-language-features"
 	},
 	"[markdown]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -25,7 +25,10 @@
 		"astro": "html"
 	},
 	"tailwindCSS.experimental.classRegex": [
-		["class:list=\\{([^}]*)\\}", "[\"'`]([^\"'`]*)[\"'`]"]
+		[
+			"class:list=\\{([^}]*)\\}",
+			"[\"'`]([^\"'`]*)[\"'`]"
+		]
 	],
 	"emmet.includeLanguages": {
 		"astro": "html"

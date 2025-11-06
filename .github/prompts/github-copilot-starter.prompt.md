@@ -1,3 +1,0 @@
----
-agent: github-copilot-starter
----
