@@ -10,11 +10,29 @@ A flexible static site generator for creating professional investor websites. Ge
 - 🚀 **Fast & Modern** - Built with Astro and Tailwind CSS for optimal performance
 - 📱 **Responsive** - Mobile-first design that works on all devices
 
+## Prerequisites
+
+### Required VS Code Extensions
+
+This project includes automatic extension recommendations. When you open the project in VS Code, you'll be prompted to install:
+
+- **Astro** (`astro-build.astro-vscode`) - Language support and IntelliSense for Astro files
+- **Tailwind CSS IntelliSense** (`bradlc.vscode-tailwindcss`) - Autocomplete and syntax highlighting for Tailwind
+- **Prettier** (`esbenp.prettier-vscode`) - Code formatting
+- **TypeScript and JavaScript Language Features** - Enhanced TypeScript support
+
+### MCP (Model Context Protocol) Configuration
+
+The project includes Astro MCP server configuration in `.vscode/mcp.json` for enhanced AI assistance with Astro-specific development.
+
 ## Quick Start
 
 ```bash
-# Install dependencies
-npm install
+# Install dependencies and check setup
+npm run setup
+
+# Check required extensions
+npm run check-extensions
 
 # Generate mockups for a site
 npm run generate-mockups middle-coast

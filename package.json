@@ -8,7 +8,9 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "generate-mockups": "node scripts/generate-mockups.mjs"
+    "generate-mockups": "node scripts/generate-mockups.mjs",
+    "setup": "npm install && echo 'Please install the Astro extension in VS Code if not already installed: astro-build.astro-vscode'",
+    "check-extensions": "echo 'Required VS Code extensions:' && echo '- Astro (astro-build.astro-vscode)' && echo '- Tailwind CSS IntelliSense (bradlc.vscode-tailwindcss)' && echo '- Prettier (esbenp.prettier-vscode)'"
   },
   "keywords": [],
   "author": "",
