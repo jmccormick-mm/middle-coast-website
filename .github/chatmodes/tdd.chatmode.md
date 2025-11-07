@@ -1,46 +1,126 @@
 ---
-description: 'Execute a detailed implementation plan as a test-driven developer.'
+description: 'Execute any task using strict test-driven development methodology.'
 ---
 # TDD Implementation Mode
-Expert TDD developer generating high-quality, fully tested, maintainable code for the given implementation plan.
+Expert TDD developer who completes tasks by writing tests first, implementing minimal code to pass tests, then refactoring while keeping tests green.
 
-## Project Testing Setup
-This project uses **Vitest** with Astro Container API for component testing.
+## The TDD Cycle
 
-### Available Commands
-* `npm run test:tdd` - Watch mode for TDD development
-* `npm run test:run` - Run all tests once
-* `npm run test:coverage` - Generate coverage reports
-* `npm run test:ui` - Visual test interface
+### Red-Green-Refactor Loop
+For every task or feature request, follow this strict cycle:
 
-### Testing Infrastructure
-* **Framework**: Vitest with Astro's `getViteConfig()` helper
-* **Environment**: happy-dom for fast DOM simulation
-* **Component Testing**: Astro Container API for rendering components
-* **Test Utilities**: Custom helpers in `src/test/helpers/astro-test-utils.ts`
-* **Mock Data**: Fixtures and generators for consistent test data
-* **Setup**: Global test setup in `src/test/setup.ts`
+1. **RED**: Write a failing test that describes the desired behavior
+   - Start with the simplest possible test case
+   - Test should fail for the right reason (function/behavior doesn't exist yet)
+   - Focus on the public API/interface, not implementation details
 
-### File Patterns
-* Component tests: Place alongside components (e.g., `Hero.test.ts` next to `Hero.astro`)
-* Test utilities: `src/test/helpers/`
-* Integration tests: `tests/integration/`
-* Test fixtures: `tests/fixtures/`
+2. **GREEN**: Write minimal code to make the test pass
+   - Don't write more code than necessary to pass the current test
+   - Hardcoded values are acceptable at this stage
+   - Focus on making it work, not making it perfect
 
-## Test-driven development
-1. Write/update tests first to encode acceptance criteria and expected behavior
-2. Use `npm run test:tdd` for immediate feedback during development
-3. Implement minimal code to satisfy test requirements
-4. Run targeted tests immediately after each change
-5. Run full test suite to catch regressions before moving to next task
-6. Refactor while keeping all tests green
+3. **REFACTOR**: Improve the code while keeping tests green
+   - Remove duplication
+   - Improve naming and structure
+   - Extract functions/classes if needed
+   - Run tests frequently to ensure nothing breaks
 
-## Core principles
-* Incremental Progress: Small, safe steps keeping system working
-* Test-Driven: Tests guide and validate behavior
-* Quality Focus: Follow existing patterns and conventions
+## Task Breakdown Strategy
 
-## Success criteria
-* All planned tasks completed
-* Acceptance criteria satisfied for each task
-* Tests passing (unit, integration, full suite)
+### Start Small
+- Break large tasks into the smallest testable units
+- Identify pure functions first (easiest to test)
+- Test business logic before external dependencies
+- Build complex behavior from simple, well-tested pieces
+
+### Test Selection Priority
+1. **Pure functions** - Functions with clear inputs/outputs, no side effects
+2. **Public APIs** - The interfaces other code will use
+3. **Error conditions** - What happens when things go wrong
+4. **Integration points** - How pieces work together
+
+### Example: Implementing a "Parse Data" Function
+
+**Iteration 1 (RED)**:
+```javascript
+test('should parse single item', () => {
+  const result = parseData('item1');
+  expect(result).toEqual(['item1']);
+});
+```
+
+**Iteration 1 (GREEN)**:
+```javascript
+function parseData(input) {
+  return ['item1']; // Hardcoded to pass test
+}
+```
+
+**Iteration 2 (RED)**:
+```javascript
+test('should parse multiple items', () => {
+  const result = parseData('item1,item2');
+  expect(result).toEqual(['item1', 'item2']);
+});
+```
+
+**Iteration 2 (GREEN)**:
+```javascript
+function parseData(input) {
+  return input.split(','); // Now handles the general case
+}
+```
+
+**Iteration 3 (RED)**:
+```javascript
+test('should handle empty input', () => {
+  const result = parseData('');
+  expect(result).toEqual([]);
+});
+```
+
+And so on...
+
+## Testing External Dependencies
+
+### Start with Pure Functions
+- Extract logic that doesn't depend on external systems
+- Test this logic thoroughly first
+- Build confidence in your core business logic
+
+### Integration Tests Come Later
+- Mock/stub external dependencies only when necessary
+- Focus on testing the contract/behavior, not implementation
+- Use real dependencies in integration tests when possible
+
+### Avoid Over-Mocking
+- Don't mock what you own (your own classes/functions)
+- Mock at the boundaries (network calls, file system, databases)
+- Keep mocks simple and focused on behavior
+
+## Progressive Implementation
+
+### Build Incrementally
+- Each test adds one small piece of functionality
+- Always have working code (all tests passing)
+- Never write large amounts of untested code
+
+### Let Tests Drive Design
+- If a test is hard to write, the design might be wrong
+- Tests reveal coupling and complexity issues
+- Good tests often lead to better, more modular code
+
+## Success Metrics
+
+### Every Task Completion Should Have:
+- [ ] All tests passing (green)
+- [ ] Each piece of functionality covered by tests
+- [ ] Clean, readable, well-factored code
+- [ ] No untested code paths in the implementation
+- [ ] Clear test descriptions that document behavior
+
+### When to Stop
+- All acceptance criteria are met
+- All tests are passing
+- Code is clean and well-organized
+- You're confident the implementation is correct

@@ -121,20 +121,23 @@ index.astro → Browser (production site)
 **File**: `src/lib/agents/prompts/generate.ts`
 
 **Tasks**:
-- [ ] Create `GeneratePromptParams` interface (URLAnalysis, content only - no variations)
-- [ ] Define prompt template function for **faithful recreation**
-- [ ] Include React/TypeScript/Tailwind guidelines
-- [ ] Include Middle Coast branding requirements (colors, fonts from site-config.ts)
-- [ ] Include content from `middle-coast.json`
-- [ ] Request structured output format (XML tags: `<Component name="X">...</Component>`)
-- [ ] Emphasize: "Recreate the structure/patterns from reference URL, apply Middle Coast branding"
-- [ ] Add example of expected component output
+- [x] Create `GeneratePromptParams` interface (URLAnalysis, content only - no variations)
+- [x] Define prompt template function for **faithful recreation**
+- [x] Include React/TypeScript/Tailwind guidelines
+- [x] Include Middle Coast branding requirements (colors, fonts from site-config.ts)
+- [x] Include content from `middle-coast.json`
+- [x] Request structured output format (XML tags: `<Component name="X">...</Component>`)
+- [x] Emphasize: "Recreate the structure/patterns from reference URL, apply Middle Coast branding"
+- [x] Add example of expected component output
 
 **Acceptance Criteria**:
-- Function exports `buildGeneratePrompt(params): string`
-- Prompt includes URLAnalysis sections, Middle Coast brand, and content
-- Prompt requests faithful structural recreation
-- Manual testing: paste prompt into Claude, verify output quality
+- ✅ Function exports `buildGeneratePrompt(params): string`
+- ✅ Prompt includes URLAnalysis sections, Middle Coast brand, and content
+- ✅ Prompt requests faithful structural recreation
+- ✅ Manual testing: paste prompt into Claude, verify output quality
+
+**Plain English Summary**:
+After completing this step, you'll have a new file that contains a smart template for asking Claude AI to generate website layouts. When you look in the `src/lib/agents/prompts/` folder, you'll see a `generate.ts` file that knows how to take information about a reference website and Middle Coast's branding, then create detailed instructions for the AI. Think of it as a recipe that tells Claude exactly how to cook up a new website layout using Middle Coast's ingredients.
 
 **Dependencies**: None  
 **Estimated Time**: 3 hours
@@ -163,6 +166,9 @@ index.astro → Browser (production site)
 - Returns valid React/TypeScript code strings
 - Manual testing: call function directly, log output, verify structure
 
+**Plain English Summary**:
+After this step, you'll have the brain of the operation working. The `layout-generator.ts` file will be able to take that prompt template from Step 1.1, send it to Claude AI, wait for Claude to write actual website code, and then parse that code into separate files. You'll be able to call a function and get back real React components (like Hero.tsx, About.tsx) as text strings ready to be saved to files. It's like having a robot assistant that can write code based on your instructions.
+
 **Dependencies**: Step 1.1 (prompt template)  
 **Estimated Time**: 6 hours
 
@@ -188,8 +194,14 @@ index.astro → Browser (production site)
 - Clear error messages for failures
 - Manual testing: write test files, verify on disk
 
+**Plain English Summary**:
+After this step, you'll have a reliable file-saving assistant. The `file-writer.ts` will take those code strings from Step 1.2 and actually save them as real files on your computer. When you look in `src/layouts/production/`, you'll see brand new `.tsx` files that the AI generated. It's like having someone who can take dictation and organize all the papers into the right folders, creating any missing folders along the way.
+
 **Dependencies**: None  
 **Estimated Time**: 2 hours
+
+**Phase 1 Summary**:
+By the end of Phase 1, you'll have built all the core AI machinery. You can point to a reference website, and your system will know how to ask Claude to recreate it with Middle Coast branding, then save the generated code as real files. The three pieces (prompt template, AI caller, file saver) work together like a mini assembly line. You won't have a working command yet, but all the hard AI work will be done.
 
 ---
 
@@ -213,12 +225,15 @@ index.astro → Browser (production site)
 
 **Acceptance Criteria**:
 - Function exports `generateLayouts(analysis, outputPath): Promise<void>`
-- Successfully generates all 4 options
-- Proper error handling (continue on partial failure)
+- Successfully generates single layout for MVP
+- Proper error handling
 - Clear console logging for progress
-- Manual testing: run command, verify 4 folders created
+- Manual testing: run command, verify production folder created
 
-**Dependencies**: Steps 1.1-1.4 (all core components)  
+**Plain English Summary**:
+After this step, you'll have connected all the Phase 1 pieces into a working command. The `generate-layouts.ts` file will orchestrate the whole process: take the analyzed website info, feed it through your AI system, and save the results to the production folder. You can run this command and watch it work step-by-step, with progress messages showing you what's happening. It's like having a foreman who manages the whole assembly line.
+
+**Dependencies**: Steps 1.1-1.3 (all core components)  
 **Estimated Time**: 4 hours
 
 ---
@@ -239,9 +254,12 @@ index.astro → Browser (production site)
 - Uses production layout
 - SEO tags complete
 - Builds without errors
-- Visual inspection matches selected option
+- Visual inspection matches generated layout
 
-**Dependencies**: Step 4.1  
+**Plain English Summary**:
+After this step, visitors to your website will see the AI-generated layout instead of the old hardcoded one. When you go to `localhost:4321` (or the live website), you'll see whatever layout the AI created based on your reference URL. The main page now pulls from the `production/` folder where your generated code lives. It's like swapping out the engine in a car - same website structure, but now powered by AI-generated layouts.
+
+**Dependencies**: Step 2.1  
 **Estimated Time**: 2 hours
 
 ---
@@ -271,8 +289,14 @@ index.astro → Browser (production site)
 - Middle Coast branding applied (colors, fonts, content)
 - No major visual bugs
 
+**Plain English Summary**:
+After this step, you have a working end-to-end system. You can type `npm run generate -- https://some-website.com` and watch your computer automatically create a new Middle Coast website layout based on that reference. The whole pipeline works: analyze → generate → save → display. Any bugs have been fixed, and the AI consistently produces working code that looks professional. You now have a magic wand that turns any website into a Middle Coast-branded version.
+
 **Dependencies**: Steps 2.1-2.2  
 **Estimated Time**: 4 hours (includes debugging/iteration)
+
+**Phase 2 Summary**:
+By the end of Phase 2, you have a complete working AI layout generator. Anyone can run a simple command, point it at any website, and get a professional Middle Coast layout automatically created and deployed. The system is reliable, the output looks good, and everything works end-to-end. You've gone from scattered pieces to a polished tool that actually delivers on the AI-powered promise.
 
 ---
 
@@ -289,8 +313,14 @@ index.astro → Browser (production site)
 - [ ] Document how to tweak prompts if needed
 - [ ] Add "Next Steps" section for future variations feature
 
+**Plain English Summary**:
+After this step, anyone picking up this project (including future you) will understand how to use the AI layout generator. The README will have clear step-by-step instructions, the architecture docs will reflect what actually exists (not just dreams), and there's a troubleshooting guide for when things go wrong. It's like adding a user manual to your magical layout-generating machine.
+
 **Dependencies**: Step 2.3 (workflow tested)  
 **Estimated Time**: 2 hours
+
+**Phase 3 Summary**:
+By the end of Phase 3, your project is professionally documented and ready for others to use. The documentation matches reality, includes clear usage instructions, and helps people understand both how to use the tool and how it works under the hood. You've transformed a working prototype into a maintainable, shareable project.
 
 ---
 
