@@ -21,42 +21,59 @@
 
 ```
 middle-coast-website/
-├── .github/
-│   ├── instructions/          # AI assistant coding guidelines
-│   │   ├── astro.instructions.md
-│   │   └── typescript.instructions.md
-│   ├── chatmodes/            # Custom Copilot chat modes
-│   ├── prompts/              # Reusable prompt files
-│   └── copilot-instructions.md  # Main Copilot context
-│
-├── content/sites/middle-coast/   # Content source (Markdown)
-│   ├── config.json               # Site configuration
-│   ├── about.md                  # About section content
-│   └── approach.md               # Investment approach content
-│
+├── .env.local                      # API keys (gitignored)
+├── .env.example                    # Template for env vars
+├── astro.config.mjs
+├── tailwind.config.mjs
+├── package.json
+├── cli/
+│   ├── generate.ts                 # Main CLI entry point
+│   └── commands/
+│       ├── analyze-url.ts          # Fetch and analyze reference URL
+│       ├── generate-layouts.ts     # Generate 4 variations
+│       └── deploy-preview.ts       # Deploy to Netlify preview
 ├── src/
-│   ├── components/               # Astro components
-│   │   ├── Hero.astro           # Full-screen hero section
-│   │   ├── About.astro          # About section
-│   │   ├── InvestmentApproach.astro  # 4-pillar grid
-│   │   └── Contact.astro        # Contact form + Calendly
-│   │
+│   ├── config/
+│   │   └── site-config.ts          # Middle Coast brand config
+│   ├── content/
+│   │   └── middle-coast.json       # Centralized content (copy, images)
 │   ├── layouts/
-│   │   └── Layout.astro         # Base HTML layout
-│   │
-│   ├── pages/                   # (empty - future routes)
-│   └── utils/                   # (empty - future utilities)
-│
-├── scripts/
-│   └── generate-mockups.mjs     # Theme variation generator
-│
-├── public/                      # Static assets
-│
-├── mockups/                     # Generated theme configs (gitignored)
-│
-└── dist/                        # Build output (gitignored)
+│   │   ├── BaseLayout.astro        # Wrapper for all layouts
+│   │   ├── generated/              # AI-generated layouts
+│   │   │   ├── option-1/
+│   │   │   │   ├── Hero.tsx
+│   │   │   │   ├── About.tsx
+│   │   │   │   ├── Approach.tsx
+│   │   │   │   ├── Contact.tsx
+│   │   │   │   └── Layout.tsx      # Composes all sections
+│   │   │   ├── option-2/
+│   │   │   ├── option-3/
+│   │   │   └── option-4/
+│   │   └── production/             # Selected production layout
+│   │       └── Layout.tsx
+│   ├── components/
+│   │   ├── LayoutSwitcher.tsx      # Preview mode switcher UI
+│   │   └── ui/                     # Shared components (buttons, etc)
+│   ├── lib/
+│   │   ├── agents/
+│   │   │   ├── url-analyzer.ts     # Analyzes reference URL structure
+│   │   │   ├── layout-generator.ts # Generates React components via Claude
+│   │   │   ├── variation-engine.ts # Creates 4 variations
+│   │   │   └── prompts/            # Claude API prompts
+│   │   │       ├── analyze.ts
+│   │   │       ├── generate.ts
+│   │   │       └── variations.ts
+│   │   └── utils/
+│   │       ├── file-writer.ts      # Writes generated components to disk
+│   │       └── deploy.ts           # Netlify deployment helper
+│   ├── pages/
+│   │   ├── index.astro             # Production site (uses production layout)
+│   │   └── preview.astro           # Preview with layout switcher
+│   └── styles/
+│       └── globals.css             # Tailwind + custom styles
+└── public/
+    └── images/                     # Static images
 ```
-
 ---
 
 ## Core Components

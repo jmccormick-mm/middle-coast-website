@@ -1012,3 +1012,59 @@ npm run deploy:prod                  # Deploy production to Netlify
 ## License
 
 [Add your license here]
+
+```
+middle-coast/
+├── .env.local                      # API keys (gitignored)
+├── .env.example                    # Template for env vars
+├── astro.config.mjs
+├── tailwind.config.mjs
+├── package.json
+├── cli/
+│   ├── generate.ts                 # Main CLI entry point
+│   └── commands/
+│       ├── analyze-url.ts          # Fetch and analyze reference URL
+│       ├── generate-layouts.ts     # Generate 4 variations
+│       └── deploy-preview.ts       # Deploy to Netlify preview
+├── src/
+│   ├── config/
+│   │   └── site-config.ts          # Middle Coast brand config
+│   ├── content/
+│   │   └── middle-coast.json       # Centralized content (copy, images)
+│   ├── layouts/
+│   │   ├── BaseLayout.astro        # Wrapper for all layouts
+│   │   ├── generated/              # AI-generated layouts
+│   │   │   ├── option-1/
+│   │   │   │   ├── Hero.tsx
+│   │   │   │   ├── About.tsx
+│   │   │   │   ├── Approach.tsx
+│   │   │   │   ├── Contact.tsx
+│   │   │   │   └── Layout.tsx      # Composes all sections
+│   │   │   ├── option-2/
+│   │   │   ├── option-3/
+│   │   │   └── option-4/
+│   │   └── production/             # Selected production layout
+│   │       └── Layout.tsx
+│   ├── components/
+│   │   ├── LayoutSwitcher.tsx      # Preview mode switcher UI
+│   │   └── ui/                     # Shared components (buttons, etc)
+│   ├── lib/
+│   │   ├── agents/
+│   │   │   ├── url-analyzer.ts     # Analyzes reference URL structure
+│   │   │   ├── layout-generator.ts # Generates React components via Claude
+│   │   │   ├── variation-engine.ts # Creates 4 variations
+│   │   │   └── prompts/            # Claude API prompts
+│   │   │       ├── analyze.ts
+│   │   │       ├── generate.ts
+│   │   │       └── variations.ts
+│   │   └── utils/
+│   │       ├── file-writer.ts      # Writes generated components to disk
+│   │       └── deploy.ts           # Netlify deployment helper
+│   ├── pages/
+│   │   ├── index.astro             # Production site (uses production layout)
+│   │   └── preview.astro           # Preview with layout switcher
+│   └── styles/
+│       └── globals.css             # Tailwind + custom styles
+└── public/
+    └── images/                     # Static images
+    ```
