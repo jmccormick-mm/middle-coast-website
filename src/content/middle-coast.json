@@ -1,0 +1,46 @@
+{
+	"hero": {
+		"headline": "Quiet Strength. Real Returns.",
+		"subheadline": "Middle Coast invests in and operates multifamily and mixed-use real estate throughout the Midwest. We build safe, modern, affordable communities that residents are proud to call home.",
+		"cta": {
+			"text": "Learn More",
+			"link": "#about"
+		}
+	},
+
+	"about": {
+		"headline": "Building Enduring Value from the Heart of America",
+		"body": [
+			"Middle Coast is a private real estate investment and operating firm focused on building enduring value through disciplined execution.",
+			"Rooted in the Midwest, we blend precision, integrity, and innovation to deliver lasting impact for our investors, lenders, and communities."
+		]
+	},
+
+	"approach": {
+		"headline": "We treat capital like it's our own. Because it is.",
+		"subheadline": "Our team blends operational discipline with Midwestern pragmatism. Every project is executed with precision and long-term vision.",
+		"pillars": [
+			{
+				"title": "Trust",
+				"description": "Every relationship earned through action"
+			},
+			{
+				"title": "Execution",
+				"description": "Precision, discipline, relentless follow-through"
+			},
+			{
+				"title": "Stewardship",
+				"description": "Building long-term prosperity, not short-term gains"
+			},
+			{
+				"title": "Pride of Place",
+				"description": "Investing in properties that elevate communities"
+			}
+		]
+	},
+
+	"contact": {
+		"headline": "Let's Build Together",
+		"email": "info@middlecoast.com"
+	}
+}

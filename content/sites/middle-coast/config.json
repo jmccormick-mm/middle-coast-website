@@ -1,24 +1,19 @@
 {
-  "name": "Middle Coast",
-  "tagline": "Midwest Real Estate Investment Firm",
-  "description": "Building lasting value through strategic real estate investments in the heart of America",
-  "theme": "professional",
-  "colors": {
-    "primary": "#1E1F1D",
-    "secondary": "#F5F4EF",
-    "accent": "#A76D3E"
-  },
-  "fonts": {
-    "heading": "DM Serif Display",
-    "body": "Montserrat"
-  },
-  "contact": {
-    "calendlyUrl": "https://calendly.com/middlecoast"
-  },
-  "sections": [
-    "hero",
-    "about",
-    "approach",
-    "contact"
-  ]
+	"name": "Middle Coast",
+	"tagline": "Midwest Real Estate Investment Firm",
+	"description": "Building lasting value through strategic real estate investments in the heart of America",
+	"theme": "professional",
+	"colors": {
+		"primary": "#1E1F1D",
+		"secondary": "#F5F4EF",
+		"accent": "#A76D3E"
+	},
+	"fonts": {
+		"heading": "DM Serif Display",
+		"body": "Montserrat"
+	},
+	"contact": {
+		"calendlyUrl": "https://calendly.com/middlecoast"
+	},
+	"sections": ["hero", "about", "approach", "contact"]
 }

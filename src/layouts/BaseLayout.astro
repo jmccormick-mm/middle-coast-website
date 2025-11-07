@@ -1,10 +1,14 @@
 ---
+import "../styles/global.css";
 interface Props {
-  title: string;
-  description?: string;
+	title: string;
+	description?: string;
 }
 
-const { title, description = 'Middle Coast - Midwest Real Estate Investment Firm' } = Astro.props;
+const {
+	title,
+	description = "Middle Coast - Midwest Real Estate Investment Firm",
+} = Astro.props;
 ---
 
 <!doctype html>
