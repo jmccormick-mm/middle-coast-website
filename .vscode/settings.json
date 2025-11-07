@@ -34,5 +34,11 @@
 		"astro": "html"
 	},
 	"typescript.preferences.includePackageJsonAutoImports": "on",
-	"typescript.suggest.autoImports": true
+	"typescript.suggest.autoImports": true,
+	"vitest.enable": true,
+	"vitest.commandLine": "npm run test",
+	"testing.automaticallyOpenPeekView": "never",
+	"testing.defaultGutterClickAction": "run",
+	"testing.followRunningTest": true,
+	"testing.saveBeforeTest": true
 }

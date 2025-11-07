@@ -1,0 +1,88 @@
+{
+	"siteConfig": {
+		"name": "Middle Coast Test",
+		"tagline": "Test Real Estate Investment Firm",
+		"description": "Focused on Midwest secondary and tertiary markets with strong fundamentals and growth potential.",
+		"calendlyUrl": "https://calendly.com/test-middle-coast",
+		"colors": {
+			"primary": "#1E1F1D",
+			"secondary": "#F5F4EF",
+			"accent": "#A76D3E",
+			"charcoal": "#1E1F1D",
+			"soft-white": "#F5F4EF",
+			"copper": "#A76D3E",
+			"deep-olive": "#4A4B3A",
+			"warm-gray": "#8B8680"
+		},
+		"fonts": {
+			"heading": "DM Serif Display",
+			"body": "Montserrat"
+		},
+		"contact": {
+			"email": "test@middlecoast.com",
+			"phone": "+1 (555) 123-4567",
+			"address": {
+				"street": "123 Test Street",
+				"city": "Chicago",
+				"state": "IL",
+				"zip": "60601"
+			}
+		}
+	},
+	"content": {
+		"hero": {
+			"name": "Middle Coast",
+			"tagline": "Midwest Real Estate Investment",
+			"description": "We specialize in identifying and acquiring high-quality real estate investments in secondary and tertiary Midwest markets."
+		},
+		"about": {
+			"title": "About Middle Coast",
+			"content": "Middle Coast is a real estate investment firm focused on the Midwest region. We target secondary and tertiary markets with strong economic fundamentals, population growth, and diversified employment bases. Our approach emphasizes thorough market research, conservative underwriting, and active asset management to deliver consistent returns for our investors."
+		},
+		"approach": {
+			"title": "Investment Approach",
+			"pillars": [
+				{
+					"title": "Market Selection",
+					"description": "We target Midwest markets with strong economic fundamentals, job growth, and reasonable cost of living. Our focus on secondary and tertiary markets allows us to find attractive opportunities often overlooked by larger institutional investors."
+				},
+				{
+					"title": "Rigorous Diligence",
+					"description": "Every investment undergoes comprehensive financial, physical, and market analysis. We perform detailed cash flow projections, physical inspections, and market comparisons to ensure each acquisition meets our strict investment criteria."
+				},
+				{
+					"title": "Value Creation",
+					"description": "We actively improve properties through strategic renovations, operational improvements, and professional management. Our hands-on approach helps maximize property values and rental income while maintaining high tenant satisfaction."
+				},
+				{
+					"title": "Risk Management",
+					"description": "We employ a disciplined approach to managing downside risk through conservative leverage, diversification across markets and property types, and maintaining adequate reserves for unexpected expenses and market fluctuations."
+				}
+			]
+		},
+		"contact": {
+			"title": "Get in Touch",
+			"subtitle": "Ready to learn more about our investment opportunities?",
+			"description": "We welcome discussions with qualified investors interested in Midwest real estate opportunities. Schedule a call to learn more about our current and upcoming investments."
+		}
+	},
+	"metadata": {
+		"title": "Middle Coast - Midwest Real Estate Investment",
+		"description": "Professional real estate investment firm specializing in secondary and tertiary Midwest markets. Conservative approach, active management, consistent returns.",
+		"keywords": [
+			"real estate",
+			"investment",
+			"midwest",
+			"secondary markets",
+			"value creation",
+			"property management"
+		],
+		"author": "Middle Coast Investment Team",
+		"og": {
+			"title": "Middle Coast - Midwest Real Estate Investment",
+			"description": "Professional real estate investment firm specializing in secondary and tertiary Midwest markets.",
+			"type": "website",
+			"image": "/images/og-image.jpg"
+		}
+	}
+}

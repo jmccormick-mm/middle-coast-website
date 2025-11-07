@@ -13,7 +13,13 @@
 		"setup": "npm install && echo 'Please install the Astro extension in VS Code if not already installed: astro-build.astro-vscode'",
 		"check-extensions": "echo 'Required VS Code extensions:' && echo '- Astro (astro-build.astro-vscode)' && echo '- Tailwind CSS IntelliSense (bradlc.vscode-tailwindcss)' && echo '- Prettier (esbenp.prettier-vscode)'",
 		"lint": "biome lint --write .",
-		"lint:fix": "biome check --write ."
+		"lint:fix": "biome check --write .",
+		"test": "vitest",
+		"test:run": "vitest run",
+		"test:watch": "vitest --watch",
+		"test:ui": "vitest --ui",
+		"test:coverage": "vitest run --coverage",
+		"test:tdd": "vitest --watch --reporter=verbose"
 	},
 	"keywords": [],
 	"author": "",
@@ -36,7 +42,14 @@
 	"devDependencies": {
 		"@astrojs/check": "^0.9.5",
 		"@biomejs/biome": "2.3.4",
+		"@testing-library/jest-dom": "^6.9.1",
+		"@testing-library/react": "^16.3.0",
+		"@testing-library/user-event": "^14.6.1",
 		"@types/node": "^24.10.0",
-		"typescript": "^5.9.3"
+		"@vitest/ui": "^4.0.7",
+		"happy-dom": "^20.0.10",
+		"jsdom": "^27.1.0",
+		"typescript": "^5.9.3",
+		"vitest": "^4.0.7"
 	}
 }
