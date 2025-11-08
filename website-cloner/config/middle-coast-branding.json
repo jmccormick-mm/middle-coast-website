@@ -1,0 +1,40 @@
+{
+  "company": {
+    "name": "Middle Coast",
+    "tagline": "Strategic Real Estate Investment",
+    "description": "Middle Coast brings sophisticated real estate investment strategies to the heartland, combining institutional expertise with local market knowledge."
+  },
+  "colors": {
+    "primary": {
+      "charcoal": "#1E1F1D",
+      "description": "Deep, sophisticated neutral for text and primary elements"
+    },
+    "accent": {
+      "copper": "#A76D3E",
+      "description": "Warm metallic accent for highlights and CTAs"
+    },
+    "background": {
+      "softWhite": "#F5F4EF",
+      "description": "Elegant backdrop with warmth"
+    },
+    "secondary": {
+      "slate": "#4A5568",
+      "lightGray": "#E2E8F0"
+    }
+  },
+  "typography": {
+    "primary": "Inter, system-ui, sans-serif",
+    "headings": "Georgia, serif",
+    "style": "Clean, professional, readable"
+  },
+  "brandVoice": {
+    "tone": "Professional yet approachable",
+    "keywords": ["strategic", "sophisticated", "trusted", "experienced", "regional focus"],
+    "avoid": ["overly casual", "jargon-heavy", "aggressive sales language"]
+  },
+  "contentGuidelines": {
+    "differentiation": "Emphasize regional expertise and personalized approach vs. large institutional player",
+    "focus": "Long-term value creation, strategic partnerships, community impact",
+    "audience": "Real estate investors, family offices, strategic partners"
+  }
+}
