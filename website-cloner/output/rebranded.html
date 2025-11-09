@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Middle Coast - Strategic Real Estate Investment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --charcoal: #1E1F1D;
+            --copper: #A76D3E;
+            --soft-white: #F5F4EF;
+            --slate: #4A5568;
+            --light-gray: #E2E8F0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--soft-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(245, 244, 239, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(30, 31, 29, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            letter-spacing: -0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--slate);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            letter-spacing: 0.3px;
+        }
+
+        nav a:hover {
+            color: var(--copper);
+        }
+
+        .nav-cta {
+            background: var(--copper);
+            color: white !important;
+            padding: 0.75rem 1.75rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: #8c5d35;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(167, 109, 62, 0.3);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--charcoal);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #1E1F1D 0%, #2a2b29 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(167, 109, 62, 0.1) 100%);
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero-eyebrow {
+            font-size: 0.95rem;
+            color: var(--copper);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.35rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 3rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--copper);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #8c5d35;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(167, 109, 62, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            border-color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: white;
+            padding: 3rem 3rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--copper);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--slate);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 3rem;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-eyebrow {
+            font-size: 0.9rem;
+            color: var(--copper);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.75rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            color: var(--slate);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .about-content h3 {
+            font-size: 1.75rem;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .about-content p {
+            color: var(--slate);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-values {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .value-item {
+            display: flex;
+            gap: 1rem;
+            align-items: start;
+        }
+
+        .value-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--copper) 0%, #8c5d35 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .value-content h4 {
+            font-size: 1.15rem;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .value-content p {
+            font-size: 0.95rem;
+            color: var(--slate);
+            margin-bottom: 0;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+            height: 600px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(167, 109, 62, 0.2) 0%, rgba(30, 31, 29, 0.3) 100%);
+            z-index: 1;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: linear-gradient(135deg, #e0d5cc 0%, #c4b5a7 100%);
+        }
+
+        /* Approach Section */
+        .approach {
+            background: var(--soft-white);
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .approach-card {
+            background: white;
+            padding: 3rem 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            border-top: 4px solid transparent;
+        }
+
+        .approach-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+            border-top-color: var(--copper);
+        }
+
+        .approach-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--copper);
+            opacity: 0.2;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .approach-card h3 {
+            font-size: 1.5rem;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .approach-card p {
+            color: var(--slate);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Commitment Section */
+        .commitment {
+            background: var(--charcoal);
+            color: white;
+        }
+
+        .commitment .section-eyebrow {
+            color: var(--copper);
+        }
+
+        .commitment .section-title {
+            color: white;
+        }
+
+        .commitment .section-description {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .commitment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .commitment-item {
+            text-align: center;
+        }
+
+        .commitment-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(167, 109, 62, 0.15);
+            border: 2px solid var(--copper);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
+
+        .commitment-item h3 {
+            font-size: 1.35rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .commitment-item p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: white;
+        }
+
+        .contact-wrapper {
+            background: linear-gradient(135deg, var(--charcoal) 0%, #2a2b29 100%);
+            border-radius: 12px;
+            padding: 5rem;
+            text-align: center;
+            color: white;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-wrapper h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .contact-wrapper p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-detail {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-detail-label {
+            font-size: 0.85rem;
+            color: var(--copper);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .contact-detail-value {
+            font-size: 1.1rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 4rem 3rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand {
+            max-width: 300px;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer-section h4 {
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--copper);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-image-wrapper {
+                height: 400px;
+                order: -1;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 1.25rem 1.5rem;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero {
+                margin-top: 70px;
+                min-height: 70vh;
+            }
+
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+
+            .stats-bar {
+                padding: 2rem 1.5rem;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-description {
+                font-size: 1.05rem;
+            }
+
+            .approach-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-wrapper {
+                padding: 3rem 2rem;
+            }
+
+            .contact-wrapper h2 {
+                font-size: 1.75rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-brand {
+                max-width: 100%;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">Middle Coast</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#approach">Approach</a></li>
+                    <li><a href="#contact" class="nav-cta">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" aria-label="Menu">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-eyebrow">Strategic Real Estate Investment</div>
+                    <h1>Building Value in America's Heartland</h1>
+                    <p class="hero-subtitle">We partner with visionary investors to unlock exceptional opportunities in the nation's most dynamic emerging markets.</p>
+                    <div class="hero-buttons">
+                        <a href="#approach" class="btn-primary">Our Approach</a>
+                        <a href="#contact" class="btn-secondary">Start a Conversation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="stats-bar">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">$250M+</div>
+                    <div class="stat-label">Assets Under Management</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">45+</div>
+                    <div class="stat-label">Active Properties</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Target Markets</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+
+        <section id="about" class="about">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-eyebrow">Who We Are</div>
+                    <h2 class="section-title">Rooted in Regional Expertise</h2>
+                    <p class="section-description">Middle Coast combines institutional discipline with entrepreneurial agility to deliver superior risk-adjusted returns in secondary and tertiary markets.</p>
+                </div>
+                <div class="about-grid">
+                    <div class="about-content">
+                        <h3>A Different Perspective on Real Estate Investment</h3>
+                        <p>While coastal markets capture headlines, we've built our reputation on identifying value where others overlook—the heartland cities driving America's economic future. Our thesis is simple: strategic investments in high-growth secondary markets deliver outsized returns with more favorable risk profiles.</p>
+                        <p>Founded by seasoned real estate professionals with deep ties to the Midwest and Central United States, Middle Coast brings a rare combination of local market intelligence and sophisticated capital deployment capabilities.</p>
+                        
+                        <div class="about-values">
+                            <div class="value-item">
+                                <div class="value-icon">1</div>
+                                <div class="value-content">
+                                    <h4>Local Knowledge</h4>
+                                    <p>Decades of on-the-ground experience in our target markets gives us unmatched insight into development patterns, regulatory environments, and emerging opportunities.</p>
+                                </div>
+                            </div>
+                            <div class="value-item">
+                                <div class="value-icon">2</div>
+                                <div class="value-content">
+                                    <h4>Institutional Rigor</h4>
+                                    <p>Every investment undergoes comprehensive due diligence using proprietary analytics, market research, and financial modeling to ensure alignment with our strict return criteria.</p>
+                                </div>
+                            </div>
+                            <div class="value-item">
+                                <div class="value-icon">3</div>
+                                <div class="value-content">
+                                    <h4>Long-Term Partnerships</h4>
+                                    <p>We view our investors as partners, maintaining transparent communication and aligning our interests through co-investment in every opportunity.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image-wrapper">
+                        <div class="about-image"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="approach" class="approach">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-eyebrow">Investment Philosophy</div>
+                    <h2 class="section-title">Our Strategic Approach</h2>
+                    <p class="section-description">We employ a disciplined, data-driven methodology that identifies and capitalizes on structural market opportunities in growing regional economies.</p>
+                </div>
+                <div class="approach-grid">
+                    <div class="approach-card">
+                        <div class="approach-number">01</div>
+                        <h3>Market Selection</h3>
+                        <p>We target cities with strong population growth, diversified employment bases, business-friendly environments, and favorable supply-demand dynamics. Our proprietary scoring system evaluates over 40 economic indicators.</p>
+                    </div>
+                    <div class="approach-card">
+                        <div class="approach-number">02</div>
+                        <h3>Asset Identification</h3>
+                        <p>Leveraging extensive broker relationships and market presence, we source off-market and lightly marketed opportunities that offer value-add potential through repositioning, renovation, or redevelopment.</p>
+                    </div>
+                    <div class="approach-card">
+                        <div class="approach-number">03</div>
+                        <h3>Rigorous Underwriting</h3>
+                        <p>Our investment committee applies conservative underwriting standards, stress-testing assumptions across multiple scenarios. We prioritize downside protection while optimizing upside potential.</p>
+                    </div>
+                    <div class="approach-card">
+                        <div class="approach-number">04</div>
+                        <h3>Active Management</h3>
+                        <p>Post-acquisition, we implement detailed business plans with hands-on oversight. Our local operating partners ensure execution excellence and rapid response to market conditions.</p>
+                    </div>
+                    <div class="approach-card">
+                        <div class="approach-number">05</div>
+                        <h3>Value Creation</h3>
+                        <p>Through strategic capital improvements, operational enhancements, and lease-up initiatives, we systematically drive NOI growth and property valuations throughout the hold period.</p>
+                    </div>
+                    <div class="approach-card">
+                        <div class="approach-number">06</div>
+                        <h3>Strategic Exit</h3>
+                        <p>We continuously evaluate market conditions and property performance to optimize exit timing, whether through disposition, refinancing, or portfolio recapitalization.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="commitment">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-eyebrow">Our Promise</div>
+                    <h2 class="section-title">Committed to Excellence</h2>
+                    <p class="section-description">Our reputation is built on consistent delivery, transparent communication, and unwavering integrity in every partnership.</p>
+                </div>
+                <div class="commitment-grid">
+                    <div class="commitment-item">
+                        <div class="commitment-icon">⚡</div>
+                        <h3>Responsive</h3>
+                        <p>Direct access to decision-makers and rapid response times set us apart from large institutional investors.</p>
+                    </div>
+                    <div class="commitment-item">
+                        <div class="commitment-icon">🎯</div>
+                        <h3>Focused</h3>
+                        <p>Concentrated expertise in our target markets enables deeper insights and better execution than generalist competitors.</p>
+                    </div>
+                    <div class="commitment-item">
+                        <div class="commitment-icon">🤝</div>
+                        <h3>Aligned</h3>
+                        <p>Significant principal co-investment ensures our interests are directly aligned with those of our partners.</p>
+                    </div>
+                    <div class="commitment-item">
+                        <div class="commitment-icon">📊</div>
+                        <h3>Transparent</h3>
+                        <p>Regular reporting, open communication, and detailed performance metrics keep investors fully informed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="section-container">
+                <div class="contact-wrapper">
+                    <h2>Let's Explore Opportunities Together</h2>
+                    <p>Whether you're an accredited investor seeking exposure to high-growth markets or a strategic partner looking to collaborate on the next opportunity, we'd welcome a conversation.</p>
+                    <a href="mailto:invest@middlecoast.com" class="btn-primary">Get in Touch</a>
+                    <div class="contact-info">
+                        <div class="contact-detail">
+                            <div class="contact-detail-label">Email</div>
+                            <div class="contact-detail-value">invest@middlecoast.com</div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-detail-label">Phone</div>
+                            <div class="contact-detail-value">(312) 555-0147</div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-detail-label">Office</div>
+                            <div class="contact-detail-value">Chicago, IL</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">Middle Coast</div>
+                    <p>Strategic real estate investment in America's heartland. Building value through regional expertise and institutional discipline.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#approach">Investment Approach</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Investors</h4>
+                    <ul>
+                        <li><a href="#contact">Partner With Us</a></li>
+                        <li><a href="#">Investment Criteria</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Disclosures</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Middle Coast Capital Partners. All rights reserved. Investment opportunities are offered to accredited investors only.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
