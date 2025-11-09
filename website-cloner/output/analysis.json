@@ -1,0 +1,93 @@
+{
+  "sections": [
+    {
+      "name": "hero",
+      "purpose": "immediate brand introduction and value proposition",
+      "layoutPattern": "hero-banner with headline and call-to-action",
+      "contentType": "headline+subheadline+cta",
+      "keyMessages": [
+        "company name",
+        "tagline or value proposition",
+        "primary action"
+      ]
+    },
+    {
+      "name": "about-company",
+      "purpose": "establish credibility and company background",
+      "layoutPattern": "text-focused section with supporting visuals",
+      "contentType": "about-text with mission/vision",
+      "keyMessages": [
+        "company history",
+        "expertise",
+        "market position"
+      ]
+    },
+    {
+      "name": "investment-approach",
+      "purpose": "explain methodology and strategy",
+      "layoutPattern": "multi-column or card-based layout",
+      "contentType": "services-list or process-explanation",
+      "keyMessages": [
+        "investment philosophy",
+        "value creation strategy",
+        "competitive advantages"
+      ]
+    },
+    {
+      "name": "portfolio",
+      "purpose": "showcase track record and current assets",
+      "layoutPattern": "grid or showcase layout",
+      "contentType": "portfolio-items with descriptions",
+      "keyMessages": [
+        "property types",
+        "locations",
+        "performance metrics"
+      ]
+    },
+    {
+      "name": "team",
+      "purpose": "build trust through leadership credentials",
+      "layoutPattern": "team-member cards or profiles",
+      "contentType": "team-bios with photos",
+      "keyMessages": [
+        "leadership experience",
+        "industry expertise",
+        "professional backgrounds"
+      ]
+    },
+    {
+      "name": "contact",
+      "purpose": "facilitate investor inquiries and connections",
+      "layoutPattern": "contact-form with information",
+      "contentType": "contact-form+address+email",
+      "keyMessages": [
+        "how to connect",
+        "office location",
+        "inquiry submission"
+      ]
+    }
+  ],
+  "visualStyle": {
+    "colors": "professional palette with neutral tones (whites, grays) and accent colors suggesting trust and stability",
+    "typography": "clean, modern sans-serif fonts suggesting professionalism and sophistication",
+    "imagery": "commercial real estate photography, corporate settings, property images, professional team photos",
+    "feeling": "sophisticated, trustworthy, institutional, professional, stable"
+  },
+  "navigation": {
+    "mainPages": [
+      "Home",
+      "About",
+      "Portfolio",
+      "Team",
+      "Contact"
+    ],
+    "cta": "contact us or learn more about investment opportunities"
+  },
+  "companyFocus": "MWN Capital appears to be a real estate investment or capital management firm focused on commercial real estate acquisition, development, or asset management with emphasis on institutional-quality approach",
+  "targetAudience": "accredited investors, institutional partners, high-net-worth individuals seeking commercial real estate investment opportunities, potential business partners",
+  "metadata": {
+    "analyzedAt": "2025-11-08T23:58:11.507Z",
+    "sourceFile": "/home/jack-friendly/.dev/contract_work/middle-coast-website/website-cloner/output/original.html",
+    "model": "claude-sonnet-4-5-20250929"
+  }
+}
